@@ -33,6 +33,55 @@ cargo check --target wasm32-unknown-unknown
 
 ## 4. 具体的写一个no_std的库
 
+### 创建一个no_std库的第一种方式
+
+1. [创建一个仓库](https://github.com/DaviRain-Su/rust-no-std-source/commit/cd90f28855cfe794c235976bb58c1c5ecb8c7fa9)
+
+```
+cargo new --lib create-no-std-lib-1
+```
+
+2. [使用#![no_std]将这个仓库中的函数能支持在no_std和std下使用]()
+
+```
+rust-no-std-source/create-no-std-lib-1  🍣 main 📝 ×2🦀 v1.55.0-nightly 🐏 7GiB/8GiB | 9GiB/9GiB
+🕙 11:28:02 ❯ cargo test
+   Compiling create-no-std-lib-1 v0.1.0 (/Users/davirain/davirain/rust-no-std-source/create-no-std-lib-1)
+    Finished test [unoptimized + debuginfo] target(s) in 0.51s
+     Running unittests (/Users/davirain/davirain/rust-no-std-source/target/debug/deps/create_no_std_lib_1-01d268f91a23f421)
+
+running 2 tests
+test tests::it_works ... ok
+test tests::test_sum ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests create-no-std-lib-1
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+rust-no-std-source/create-no-std-lib-1  🍣 main 📝 ×2🦀 v1.55.0-nightly 🐏 7GiB/8GiB | 9GiB/9GiB
+🕙 11:28:07 ❯ cargo test --no-default-features
+    Finished test [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests (/Users/davirain/davirain/rust-no-std-source/target/debug/deps/create_no_std_lib_1-01d268f91a23f421)
+
+running 2 tests
+test tests::it_works ... ok
+test tests::test_sum ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests create-no-std-lib-1
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+```
+
 
 ## 5. 一些no_std和std可以使用的primite类型仓库
 
