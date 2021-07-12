@@ -6,7 +6,6 @@ use alloc::format;
 
 pub fn hello () -> String {
     format!("hello, world")
-    // println!("hello world");
 }
 
 #[cfg(test)]
