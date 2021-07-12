@@ -7,7 +7,7 @@ edition = "2018"
 
 [dependencies]
 example-no-std = {version = "0.1.0", path = "../example-no-std" }
-features-no-std = { version = "0.1.0", path = "../features-no-std" }
+features-no-std = { version = "0.1.0", path = "../features-no-std", default-features = false }
 
 [features]
 default = ["std"]
