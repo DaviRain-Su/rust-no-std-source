@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "example-no-std",
+    "hello",
+    "features-no-std"
+]
