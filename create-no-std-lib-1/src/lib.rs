@@ -1,5 +1,7 @@
 #![no_std]
-
+extern crate alloc;
+use alloc::string::String;
+use alloc::format;
 
 pub fn sum(a: i32, b: i32) -> i32 {
     a + b

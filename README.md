@@ -84,7 +84,9 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 
 使一些不能在no_std环境下运行的函数也能在no_std下支持
 
-[commit 1]()
+
+
+[开始添加一个函数编译报错commit 1](https://github.com/DaviRain-Su/rust-no-std-source/commit/8bcd0b909ee116d3dc9c6464c2548e1c008d672e)
 
 ```
     Checking create-no-std-lib-1 v0.1.0 (/Users/davirain/davirain/rust-no-std-source/create-no-std-lib-1)
@@ -108,7 +110,12 @@ error: could not compile `create-no-std-lib-1`
 To learn more, run the command again with --verbose.
 ```
 
-[commit 2]()
+[修复错误commit 2]()
+```
+rust-no-std-source  🍣 main 📝 ×2🦀 v1.55.0-nightly 🐏 7GiB/8GiB | 9GiB/9GiB
+🕙 11:36:06 ✖  cargo check
+    Finished dev [unoptimized + debuginfo] target(s) in 0.00s
+```
 
 
 
