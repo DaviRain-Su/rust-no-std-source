@@ -110,7 +110,7 @@ error: could not compile `create-no-std-lib-1`
 To learn more, run the command again with --verbose.
 ```
 
-[修复错误commit 2]()
+[修复错误commit 2](https://github.com/DaviRain-Su/rust-no-std-source/commit/ae94f9cf147b7ce37632cb4e9c36e20c5135b3ad)
 ```
 rust-no-std-source  🍣 main 📝 ×2🦀 v1.55.0-nightly 🐏 7GiB/8GiB | 9GiB/9GiB
 🕙 11:36:06 ✖  cargo check
