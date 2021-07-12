@@ -41,7 +41,7 @@ cargo check --target wasm32-unknown-unknown
 cargo new --lib create-no-std-lib-1
 ```
 
-2. [使用#![no_std]将这个仓库中的函数能支持在no_std和std下使用]()
+2. [使用#![no_std]将这个仓库中的函数能支持在no_std和std下使用](https://github.com/DaviRain-Su/rust-no-std-source/commit/d3c05920865a44ab7cbaf82a72f21c7b6b8beeb0)
 
 ```
 rust-no-std-source/create-no-std-lib-1  🍣 main 📝 ×2🦀 v1.55.0-nightly 🐏 7GiB/8GiB | 9GiB/9GiB
@@ -81,6 +81,35 @@ running 0 tests
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
 ```
+
+使一些不能在no_std环境下运行的函数也能在no_std下支持
+
+[commit 1]()
+
+```
+    Checking create-no-std-lib-1 v0.1.0 (/Users/davirain/davirain/rust-no-std-source/create-no-std-lib-1)
+error: cannot find macro `format` in this scope
+  --> create-no-std-lib-1/src/lib.rs:10:5
+   |
+10 |     format!("hello")
+   |     ^^^^^^
+
+error[E0412]: cannot find type `String` in this scope
+ --> create-no-std-lib-1/src/lib.rs:9:30
+  |
+9 | pub fn get_hello_string() -> String {
+  |                              ^^^^^^ not found in this scope
+
+error: aborting due to 2 previous errors
+
+For more information about this error, try `rustc --explain E0412`.
+error: could not compile `create-no-std-lib-1`
+
+To learn more, run the command again with --verbose.
+```
+
+[commit 2]()
+
 
 
 ## 5. 一些no_std和std可以使用的primite类型仓库

@@ -6,11 +6,16 @@ pub fn sum(a: i32, b: i32) -> i32 {
 }
 
 
+pub fn get_hello_string() -> String {
+    format!("hello")
+}
+
+
 
 #[cfg(test)]
 mod tests {
     use  super::*;
-    
+
     #[test]
     fn it_works() {
         assert_eq!(2 + 2, 4);
