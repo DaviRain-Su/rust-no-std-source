@@ -6,7 +6,8 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
+# 使用sp_std下的类型，可以在no_std和std下都能编译通过
+sp-std = { version = "3.0.0", default-featuers = false }
 
 # 这里说明的是，default设置默认的featuer这里默认设置的是std,
 # 这里的std = []表示的意思，这个库create-no-std-lib-2可能需要一些别的库，
