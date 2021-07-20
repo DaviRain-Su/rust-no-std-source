@@ -1,0 +1,10 @@
+[package]
+name = "use-no-std"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+create-no-std-lib-1 = { path = "../create-no-std-lib-1" }
+create-no-std-lib-2 = { path = "../create-no-std-lib-2", default-features = false }

@@ -2,4 +2,5 @@
 members = [
     "create-no-std-lib-1",
     "create-no-std-lib-2",
+    "use-no-std",
 ]

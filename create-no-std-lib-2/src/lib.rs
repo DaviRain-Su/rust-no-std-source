@@ -8,7 +8,7 @@ use alloc::string::String;
 use sp_std::vec::Vec;
 
 
-fn hello(value: &str) -> Vec<u8> {
+pub fn hello(value: &str) -> Vec<u8> {
     let tmp  = String::from(value);
     tmp.into_bytes()
 }
