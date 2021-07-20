@@ -8,6 +8,10 @@ edition = "2018"
 [dependencies]
 
 
+# 这里说明的是，default设置默认的featuer这里默认设置的是std,
+# 这里的std = []表示的意思，这个库create-no-std-lib-2可能需要一些别的库，
+# 当使用别的库的时候也有std和no_std的区分，当设置为default的时候，这个库create-no-std-lib-2
+# 就是使用的std的环境，因为这个库依赖的一些子库也需要std。而这里的std = []就是设置的。
 [features]
 default = ["std"]
 std = []
