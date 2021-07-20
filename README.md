@@ -1,12 +1,26 @@
 # rust-no-std-source
+> About Rust no std sources
 
-About Rust no std sources
+
+# 题目: 改写std的库为支持no_std的库及写出一个支持std和no_std库的经验谈
+
+>首先简单介绍std和no_std的区别，  
+然后介绍使用no_std库方式， 由于支持no_std的特性有两种不同的方式，
+因此使用no_std库也有两种方式。
+如何验证一个库是否支持no_std特性的验证方式，
+如何改写一个std库为支持std和no_std的特性的方法。
+具体的如何写一个支持std和no_std的库。
+一些在std和no_std下都可以使用的primitive的仓库和相关的资源和文章。
+
+
+
+# 目录
 
 - std和no_std的区别
-- Rust中的no_std的一些使用方法
-- 验证一个库是否支持no_std的验证方式
-- 具体的写一个no_std的库
-- 一些no_std和std可以使用primitive类型的仓库
+- Rust中使用no_std库的两种方式
+- 验证一个库是否支持no_std特性的验证方式
+- 具体的写一个支持std和no_std的库
+- 一些no_std和std可以使用primitive类型的仓库和相关资源的文章
 
 
 
@@ -14,7 +28,7 @@ About Rust no std sources
 
 ## 1. std 和 no_std 的区别
 
-> ### 2.1.3 核心库
+> ### 核心库
 >
 > Rust语言的语法由核心库和标准库共同提供。
 > 其中Rust核心库是标准库的基础。核心库中定义的是Rust语言的核心，不依赖于操作系统和网络等相关的库，甚至不知道堆分配，也不提供并发和I/O
@@ -26,7 +40,7 @@ About Rust no std sources
 > - 常用的宏定义，如println！、assert！、panic！、vec！等。
 > 做嵌入式应用开发的时候，核心库是必需的。
 >
-> ### 2.1.4 标准库
+> ### 标准库
 >
 > Rust标准库提供应用程序开发所需要的基础和跨平台支持。标准库包含的内容大概如下：
 > - 与核心库一样的基本trait、原始数据类型、功能型数据类型和常用宏等，以及与核心库几乎完全一致的API。
@@ -61,92 +75,20 @@ std（标准库环境）下使用。
 
 1. [创建一个仓库](https://github.com/DaviRain-Su/rust-no-std-source/commit/cd90f28855cfe794c235976bb58c1c5ecb8c7fa9)
 
-```
-cargo new --lib create-no-std-lib-1
-```
-
 2. [使用#![no_std]将这个仓库中的函数能支持在no_std和std下使用](https://github.com/DaviRain-Su/rust-no-std-source/commit/d3c05920865a44ab7cbaf82a72f21c7b6b8beeb0)
 
-```
-rust-no-std-source/create-no-std-lib-1  🍣 main 📝 ×2🦀 v1.55.0-nightly 🐏 7GiB/8GiB | 9GiB/9GiB
-🕙 11:28:02 ❯ cargo test
-   Compiling create-no-std-lib-1 v0.1.0 (/Users/davirain/davirain/rust-no-std-source/create-no-std-lib-1)
-    Finished test [unoptimized + debuginfo] target(s) in 0.51s
-     Running unittests (/Users/davirain/davirain/rust-no-std-source/target/debug/deps/create_no_std_lib_1-01d268f91a23f421)
+3. [开始添加一个函数编译报错commit 1](https://github.com/DaviRain-Su/rust-no-std-source/commit/8bcd0b909ee116d3dc9c6464c2548e1c008d672e)
 
-running 2 tests
-test tests::it_works ... ok
-test tests::test_sum ... ok
-
-test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
-
-   Doc-tests create-no-std-lib-1
-
-running 0 tests
-
-test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+4. [修复错误commit 2](https://github.com/DaviRain-Su/rust-no-std-source/commit/ae94f9cf147b7ce37632cb4e9c36e20c5135b3ad)
 
 
-rust-no-std-source/create-no-std-lib-1  🍣 main 📝 ×2🦀 v1.55.0-nightly 🐏 7GiB/8GiB | 9GiB/9GiB
-🕙 11:28:07 ❯ cargo test --no-default-features
-    Finished test [unoptimized + debuginfo] target(s) in 0.02s
-     Running unittests (/Users/davirain/davirain/rust-no-std-source/target/debug/deps/create_no_std_lib_1-01d268f91a23f421)
-
-running 2 tests
-test tests::it_works ... ok
-test tests::test_sum ... ok
-
-test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
-
-   Doc-tests create-no-std-lib-1
-
-running 0 tests
-
-test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
-
-```
-
-使一些不能在no_std环境下运行的函数也能在no_std下支持
-
-
-
-[开始添加一个函数编译报错commit 1](https://github.com/DaviRain-Su/rust-no-std-source/commit/8bcd0b909ee116d3dc9c6464c2548e1c008d672e)
-
-```
-    Checking create-no-std-lib-1 v0.1.0 (/Users/davirain/davirain/rust-no-std-source/create-no-std-lib-1)
-error: cannot find macro `format` in this scope
-  --> create-no-std-lib-1/src/lib.rs:10:5
-   |
-10 |     format!("hello")
-   |     ^^^^^^
-
-error[E0412]: cannot find type `String` in this scope
- --> create-no-std-lib-1/src/lib.rs:9:30
-  |
-9 | pub fn get_hello_string() -> String {
-  |                              ^^^^^^ not found in this scope
-
-error: aborting due to 2 previous errors
-
-For more information about this error, try `rustc --explain E0412`.
-error: could not compile `create-no-std-lib-1`
-
-To learn more, run the command again with --verbose.
-```
-
-[修复错误commit 2](https://github.com/DaviRain-Su/rust-no-std-source/commit/ae94f9cf147b7ce37632cb4e9c36e20c5135b3ad)
-```
-rust-no-std-source  🍣 main 📝 ×2🦀 v1.55.0-nightly 🐏 7GiB/8GiB | 9GiB/9GiB
-🕙 11:36:06 ✖  cargo check
-    Finished dev [unoptimized + debuginfo] target(s) in 0.00s
-```
 ### 创建no_std库的第二种方式(使用#![cfg_attr(not(feature = "std"), no_std))
 
 
+## 5 使一些不能在no_std环境下运行的函数也能在no_std下支持
 
 
-
-## 5. 一些no_std和std可以使用的primite类型仓库
+## 6. 一些no_std和std可以使用的primite类型仓库
 
 - [sp-std](https://github.com/paritytech/substrate/tree/master/primitives/std)
 
