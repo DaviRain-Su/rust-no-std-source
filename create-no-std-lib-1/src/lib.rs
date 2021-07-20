@@ -8,8 +8,8 @@ pub fn sum(a: i32, b: i32) -> i32 {
 }
 
 
-pub fn get_hello_string() -> String {
-    format!("hello")
+pub fn get_hello_string(value: &str) -> String {
+    String::from(value)
 }
 
 
@@ -17,6 +17,8 @@ pub fn get_hello_string() -> String {
 #[cfg(test)]
 mod tests {
     use  super::*;
+    use alloc::string::String;
+    use alloc::string::ToString;
 
     #[test]
     fn it_works() {
@@ -26,5 +28,10 @@ mod tests {
     #[test]
     fn test_sum() {
         assert_eq!(sum(2, 3), 5);
+    }
+
+    #[test]
+    fn test_get_hello_string() {
+        assert_eq!("hello".to_string(), get_hello_string("hello"));
     }
 }
