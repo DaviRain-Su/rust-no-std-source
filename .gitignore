@@ -10,3 +10,5 @@ Cargo.lock
 **/*.rs.bk
 
 /example-no-std/target/*
+
+.idea
