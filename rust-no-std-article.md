@@ -84,7 +84,11 @@
 
 首先，要验证这个库能不能支持no_std的环境（见，验证一个库是否支持no_std的验证方式）。
 
-找出这个库依赖的库支持no_std的方式，如果使用的是#![no_std] 那么这个库本身就是可以在std和no_std下同时的运行。如果使用的是#![cfg_attr(not(features = "std"), no_std)],就需要打开default-features = false,进行配置。最后可能需要做一些标准库的替换，使其能在no_std和std同时编译成功，一些可以使用的类型库有sp-std(这个库仅仅封装了一部分的类型，例如有些类型是没有的，string,File, IO)当然,IO,File，这些标准库在核心库当中是没有的。还有rust本身的alloc, core这些都是属于核心库的。也是在no_std环境下支持的。
+找出这个库依赖的库支持no_std的方式，如果使用的是#![no_std] 那么这个库本身就是可以在std和no_std下同时的运行。
+
+如果使用的是#![cfg_attr(not(features = "std"), no_std)],就需要打开default-features = false,进行配置。
+
+最后可能需要做一些标准库的替换，使其能在no_std和std同时编译成功，一些可以使用的类型库有sp-std(这个库仅仅封装了一部分的类型，例如有些类型是没有的，string,File, IO)当然,IO,File，这些标准库在核心库当中是没有的。还有rust本身的alloc, core这些都是属于核心库的。也是在no_std环境下支持的。
 
 具体的使用案例:
 
