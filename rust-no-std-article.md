@@ -94,25 +94,25 @@
 
 ## 一些no_std和std可以使用的primitive 类型的仓库
 
-- [sp-std]([https://github.com/paritytech/substrate/tree/master/primitives/std](https://github.com/paritytech/substrate/tree/master/primitives/std))
-- [rust Alloc crate]([https://doc.rust-lang.org/alloc/index.html](https://doc.rust-lang.org/alloc/index.html))
-- [rust Core crate]([https://doc.rust-lang.org/core/index.html](https://doc.rust-lang.org/core/index.html))
+- [sp-std](https://github.com/paritytech/substrate/tree/master/primitives/std)
+- [rust Alloc crate](https://doc.rust-lang.org/alloc/index.html)
+- [rust Core crate](https://doc.rust-lang.org/core/index.html)
 
 ## 引用及资源
 
-- [Rust 编程之道核心库和标准库的介绍]([https://weread.qq.com/web/reader/0303203071848774030b9d6k9bf32f301f9bf31c7ff0a60](https://weread.qq.com/web/reader/0303203071848774030b9d6k9bf32f301f9bf31c7ff0a60))
-- [Rust embeded book]([https://docs.rust-embedded.org/book/intro/no-std.html](https://docs.rust-embedded.org/book/intro/no-std.html))
-- [扩展no_std crate 的最佳实践]()
-- [Rust API guidelines]([https://github.com/rust-lang/api-guidelines](https://github.com/rust-lang/api-guidelines))
-- [Rust API guidelines Nameing]([https://rust-lang.github.io/api-guidelines/naming.html#c-feature](https://rust-lang.github.io/api-guidelines/naming.html#c-feature))
+- [Rust 编程之道核心库和标准库的介绍](https://weread.qq.com/web/reader/0303203071848774030b9d6k9bf32f301f9bf31c7ff0a60)
+- [Rust embeded book](https://docs.rust-embedded.org/book/intro/no-std.html)
+- [扩展no_std crate 的最佳实践](https://users.rust-lang.org/t/best-practice-of-extending-a-no-std-crate/12281/5)
+- [Rust API guidelines](https://github.com/rust-lang/api-guidelines)
+- [Rust API guidelines Nameing](https://rust-lang.github.io/api-guidelines/naming.html#c-feature)
 - [serde no_std的使用规范]([https://serde.rs/no-std.html](https://serde.rs/no-std.html))
-- [awesome-embedded-rust#no-std-crates]([https://github.com/rust-embedded/awesome-embedded-rust#no-std-crates](https://github.com/rust-embedded/awesome-embedded-rust#no-std-crates))
-- [no standard library]([https://crates.io/categories/no-std](https://crates.io/categories/no-std))
-- [serde使用的第二种方式]([https://github.com/serde-rs/serde/blob/master/serde/src/lib.rs#L113-L193](https://github.com/serde-rs/serde/blob/master/serde/src/lib.rs#L113-L193))
-- [Rust RFC Book no_std]([https://rust-lang.github.io/rfcs/1184-stabilize-no_std.html](https://rust-lang.github.io/rfcs/1184-stabilize-no_std.html))
+- [awesome-embedded-rust#no-std-crates](https://github.com/rust-embedded/awesome-embedded-rust#no-std-crates)
+- [no standard library](https://crates.io/categories/no-std)
+- [serde使用的第二种方式](https://github.com/serde-rs/serde/blob/master/serde/src/lib.rs#L113-L193)
+- [Rust RFC Book no_std](https://rust-lang.github.io/rfcs/1184-stabilize-no_std.html)
 - [Rust no_std DAQ]([https://justjjy.com/Rust-no-std](https://justjjy.com/Rust-no-std))
-- [testing-for-no-std-compatibility]([https://blog.dbrgn.ch/2019/12/24/testing-for-no-std-compatibility/](https://blog.dbrgn.ch/2019/12/24/testing-for-no-std-compatibility/))
-- [substrate中关于cfg_attr的介绍]([https://substrate.dev/docs/zh-CN/tutorials/add-a-pallet/import-a-pallet](https://substrate.dev/docs/zh-CN/tutorials/add-a-pallet/import-a-pallet))
+- [testing-for-no-std-compatibility](https://blog.dbrgn.ch/2019/12/24/testing-for-no-std-compatibility/)
+- [substrate中关于cfg_attr的介绍](https://substrate.dev/docs/zh-CN/tutorials/add-a-pallet/import-a-pallet)
 
 ## 结论
 
