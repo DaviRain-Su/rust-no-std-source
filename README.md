@@ -134,6 +134,9 @@ std（标准库环境）下使用。
 - [rust Alloc crate](https://doc.rust-lang.org/alloc/index.html)
 - [rust Core crate](https://doc.rust-lang.org/core/index.html)
 
+## 7, pallet-node-template 可以测试是否支持no_std特性
+- [pallet-node-template](https://github.com/DaviRain-Su/pallet-node-template)
+
 
 
 ## 引用
